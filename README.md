@@ -3,6 +3,8 @@
 An simple browser game based on The Witcher game serie.  
 The proposition of this mini project it was to made a browser game with node.js using mongodb and some jquery functions.  
 
+---
+
 * First you have to sign-in in the game, *it has validation functions*  
 
 ![alt text][logo2]
@@ -24,5 +26,9 @@ The proposition of this mini project it was to made a browser game with node.js 
 [logo]: https://uploaddeimagens.com.br/images/001/889/817/original/Capturar.JPG "'central' game page"  
 
 *In the game page we can commands some actions, this commands will be finished by the time described in the actions selection, and your resource icons will be updated*  
+
+~~It has some bugs~~  
+
+---
 
 And thats it..
