@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>MMORPG - Game of Thrones</title>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+		<script src="js/jquery-2.2.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>	
+		
+		<link href="css/style.css" rel="stylesheet">
+
+		<script type="text/javascript">	
+			$(document).ready(function(){
+				$("#btn_populacao").click(function(){
+					$("#msg").hide();
+				 	$.ajax({
+				 		url: "/populacao",
+				 		method: "get",
+				 		success: function(data){
+				 			$("#acoes").html(data);
+				 		}
+				 	});
+				});		
+
+				$("#btn_objetivos").click(function(){
+					$("#msg").hide();
+					$.ajax({
+						url: '/objetivos',
+						method: 'get',
+						success: function(data){
+							$('#acoes').html(data);
+							clearTimeout(timerId);
+							cronometro();
+						}
+					});
+				});
+			});	
+			var timerId = null;
+			function cronometro(){
+				$('.tempo_restante').each(function(){
+					var segundos = $(this).html();
+					var segundos_atuais = parseInt(segundos) -1;
+					
+					if(segundos_atuais < 0){
+						window.location.href = "/jogo?msg=C";						
+					}else{
+						$(this).html(segundos_atuais);
+						timerId = setTimeout('cronometro()', 1000);
+					}					
+				});				
+			}
+		</script>	
+	</head>	
+	<body class="body-jogo">
+		<div class="col-md-12" style="padding-top:15px">
+			<h6>Bem Vindo, </h6><a class="btn btn-outline-secondary" href="/sair">Sair</a>			
+		</div>
+		<div class="container">	    	
+			<div class="row">
+	    		<div class="col-md-3 reino">					
+					<img src="images/reino_<%=reino%>.jpg" title="<%=reino%>" alt="<%=reino%>" style="width: 255px"/>
+					<h4><%=reino%></h4>
+				</div>
+	    		<div class="col-md-9">
+					<div class="row barra-superior reino">
+						<div class="col-md-3"> 
+							<h6>Defesa</h6>
+							<img src="images/habilidades/defesa.png" title="Defesa" alt="Defesa" class="img-habilidades"/>
+							<span><%=jogo.defesa%></span>
+						</div>
+						
+						<div class="col-md-3"> 
+								<h6>Dano</h6>
+							<img src="images/habilidades/dano.png" title="Dano" alt="Dano" class="img-habilidades"/>
+							<span><%=jogo.dano%></span>
+						</div>
+						
+						<div class="col-md-3"> 
+								<h6>Ouro</h6>
+							<img src="images/habilidades/moeda.png" title="Ouro" alt="Ouro" class="img-habilidades"/>
+							<span><%=jogo.ouro%></span>
+						</div>
+						
+						<div class="col-md-3"> 
+								<h6>Magia</h6>
+							<img src="images/habilidades/magia.png" title="Magia" alt="Magia" class="img-habilidades"/>
+							<span><%=jogo.magia%></span>
+						</div>
+					</div>
+				</div>				
+				<div class="col-md-12" style="padding-right: 0px;padding-left: 0px;margin-top: 20px;">
+					<div class="acoes" id="acoes"><h4>Senhor, o que deseja fazer hoje?</h4></div>					
+				</div>
+				<div class="col-md-12" style="padding-right: 0px;padding-left: 0px;margin-top: 20px;">
+					<% if(msg == 'A'){%>
+						<div class="alert alert-danger" id="msg">
+							<strong>Ordem invalida, verifique os campos.</strong>
+						</div>
+					<%}%>
+					<% if(msg == 'B'){%>
+						<div class="alert alert-info" id="msg">
+							<strong>Ordem realizada</strong>
+						</div>
+					<%}%>
+					<% if(msg == 'C'){%>
+						<div class="alert alert-success" id="msg">
+							<strong>Ordem Finalizada</strong>
+						</div>
+					<%}%>
+					<% if(msg == 'D'){%>
+						<div class="alert alert-warning" id="msg">
+							<strong>Ordem Removida</strong>
+						</div>
+					<%}%>					
+				</div>
+				</div>
+	    	</div>									
+		</div>			
+		<div class="barra-inferior">
+			<div class="container">			
+				<div class="row reino">
+					<div class="col-md-6">
+						<h6>Ordens</h6>
+						<img src="images/outros/suditos.jpg" title="Ordens" alt="Ordens" class="img-habilidades" id="btn_populacao"/>
+						<span><%=jogo.populacao%></span>
+					</div>					
+					<div class="col-md-6">
+						<h6>Objetivos</h6>
+						<img src="images/outros/pergaminho.jpg" title="Objetivos" alt="Objetivos" class="img-habilidades" id="btn_objetivos"/>
+						<span><%=jogo.contratos%></span>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</body>
+</html>

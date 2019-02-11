@@ -1,0 +1,35 @@
+<div class="col-md-12" id="populacao">					
+	<h4>Ordens</h4>	
+	<br>
+	<form action="/ordens" method="POST">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="form-group">
+					<select class="form-control" name="acao">
+						<option value="">-- Escolha a ação</option>
+						<option value="1">Realizar Comércio (+10 Moedas e 2 Horas)</option>
+						<option value="2">Fazer Contrato Bruxo(+1 População, -10 Moedas e 2 Horas)</option>
+						<option value="">----------------------------------------------------------------------</option>
+						<option value="3">Treinar Exército (+10 Defesa, +10 Dano, -20 Moedas e 8 Horas)</option>
+						<option value="4">Recrutar General (+2 Defesa, +2 Dano, -50 Moedas e 6 Horas)</option>
+						<option value="5">Recrutar Arqueiro (+1 Defesa, +2 Dano, -25 Moedas e 3 Horas)</option>
+						<option value="6">Recrutar Guerreiro (+2 Defesa, +1 Dano, -10 Moedas e 3 Horas)</option>
+						<option value="">----------------------------------------------------------------------</option>
+						<option value="7">Ensinar Magia (-1 População, +5 Mágia, -15 Moedas e 5 Horas)</option>
+						<option value="8">Enforcar Aldeão (-1 População, -30 Moedas e 2 Horas)</option>
+					</select>										
+				</div>
+			</div>			
+			<div class="col-md-2">
+				<div class="form-group">
+					<input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade">									
+				</div>
+			</div>			
+			<div class="col-md-2">
+				<div class="form-group">
+					<button type="submit" class="form-control btn btn-primary">Ordenar</button>
+				</div>
+			</div>			
+		</div>	
+	</form>
+</div>

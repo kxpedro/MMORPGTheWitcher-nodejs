@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>MMORPG - Game of Thrones</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="body-cadastro">
+	    <div class="container">	    		
+
+			<% if(validacao.length > 0){ %>
+			<div class="alert alert-danger">
+				<strong>Atenção!</strong>
+				<ul>
+				<% for(var i = 0; i < validacao.length; i++){%>
+					<li> <%=validacao[i].msg%> </li>
+				<% } %>
+				</ul>
+			</div>				
+			<% } %>
+
+			<form action="/cadastrar" method="POST">			
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="nome" class="col-form-label">Nome</label>
+							<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<%=dadosForm.nome%>">
+						</div>
+					</div>					
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="usuario" class="col-form-label">Usuário</label>
+							<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" value="<%=dadosForm.usuario%>"> 
+						</div>
+					</div>					
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="senha" class="col-form-label">Senha</label>
+							<input type="password" class="form-control" id="senha" name="senha" placeholder="Password" value="<%=dadosForm.senha%>">
+						</div>
+					</div>
+				</div>
+				<hr>				
+				<div class="row">				
+        			<div class="col-md-6">
+        				<img src="images/reino_Teméria.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Teméria">Teméria</center>
+        			</div>					
+					<div class="col-md-6">
+        				<img src="images/reino_Aedirn.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Aedirn">Aedirn</center>
+        			</div>					
+					<div class="col-md-6">
+        				<img src="images/reino_Nilfgaard.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Nilfgaard">Nilfgaard</center>
+        			</div>					
+					<div class="col-md-6">
+        				<img src="images/reino_Redania.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Redania">Redania</center>
+        			</div>					
+					<div class="col-md-6">
+        				<img src="images/reino_Skellige.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Skellige">Skellige</center>
+					</div>
+					<div class="col-md-6">
+						<img src="images/reino_Kaedwen.jpg" class="img-fluid img-radio" style="width: 540px">
+						<center><input type="radio" id="left-item" name="reino" value="Kaedwen">Kaedwen</center>
+					</div>
+        		</div>				
+				<hr>
+				<div class="form-group row">
+					<div class="col-md-4">					
+						<a class="btn btn-success form-control" href="/">Voltar</a>
+					</div>	
+					<div class="col-md-8">
+						<input type="submit" class="btn btn-primary form-control" value="Confirmar cadastro"> 
+					</div>					
+				</div>		
+			</form>					
+	    </div>	
+		
+	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</html>

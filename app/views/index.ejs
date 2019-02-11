@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>MMORPG - Game of Thrones</title>		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body class="body-index">
+	    <div class="container">			
+			<div align="center"><h1>The Witcher MMORPG</h1></div>
+			<div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">							
+				<form action="/autenticar" method="POST">
+					<div class="form-group">
+						<label for="usuario" class="label-form">Username</label>
+						<input type="text" class="form-control" name="usuario" id="usuario">
+					</div>
+					<div class="form-group">
+						<label for="senha" class="label-form">Password</label>
+						<input type="password" class="form-control" name="senha" id="senha">
+					</div>
+					<input type="submit" class="btn btn-success form-control" id="login" value="Login">
+				</form>	
+				<div align="center"><h6>or</h6></div>
+				<form action="/cadastro" method="get">
+					<input type="submit" class="btn btn-danger form-control" id="signin" value="Sign-in">
+				</form>
+				<br>
+				<% if(validacao.length > 0){ %>
+					<div class="alert alert-danger">
+						<strong>Atenção!</strong>
+						<ul>
+							<% for(var i = 0; i < validacao.length; i++){ %>
+								<li> <%=validacao[i].msg %> </li>
+							<% } %>
+						</ul>
+					</div>
+				<% } %>								
+			</div>
+		</div>			
+	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</html>
