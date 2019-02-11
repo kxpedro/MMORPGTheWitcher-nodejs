@@ -1,6 +1,6 @@
 # MMORPGTheWitcher-nodejs
-An simple browser game based on The Witcher game serie.  
-It was made with node.js using mongodb as database and some jquery functions.  
+An simple browser game based on The Witcher game serie. 
+The proposition was made an browser game with node.js using mongodb as database and some jquery functions.  
 
 * Main GamePage: 
 
@@ -8,7 +8,7 @@ It was made with node.js using mongodb as database and some jquery functions.
 
 [logo]: https://uploaddeimagens.com.br/images/001/889/817/original/Capturar.JPG "PrintScreen from the 'central' game page"  
 
-* First you have to sign-in in the game, *t has validation functions*  
+* First you have to sign-in in the game, *it has validation functions*  
 
 ![alt text][logo2]
 
