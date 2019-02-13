@@ -11,7 +11,7 @@ The proposition of this mini project it was to made a browser game with node.js 
 
 [logo2]: https://uploaddeimagens.com.br/images/001/889/820/original/Capturar.JPG "index page"  
 
-* The Registration page:  
+* The Register Page:  
 
 ![alt text][logo3]
 
@@ -19,7 +19,7 @@ The proposition of this mini project it was to made a browser game with node.js 
 
 *After singin and login, you will be redirected to the game page:*  
 
-* Main GamePage: 
+* Main Game Page: 
 
 ![alt text][logo]
 
