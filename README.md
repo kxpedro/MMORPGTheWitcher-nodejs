@@ -1,7 +1,7 @@
 # MMO RPG based on The Witcher Game Series
 
 An simple browser game based on The Witcher game series.  
-The proposition of this mini project it was to make a browser game with node.js using mongodb and some jquery functions.  
+The proposition of this mini project it was to make a browser game with node.js using mongodb and some jquery functions, not to mention the libraries: consign, express, body-parser, express-validator, express-session, nodemon and crypto.  
 
 ---
 
